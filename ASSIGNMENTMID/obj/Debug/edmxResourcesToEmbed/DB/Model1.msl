@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="zero_hungerModelStoreContainer" CdmEntityContainer="zero_hungerEntities">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="zero_hungerModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="zero_hungerModel.Request">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Restaurantid" ColumnName="Restaurantid" />
+          <ScalarProperty Name="Request1" ColumnName="Request" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="isAssigned" ColumnName="isAssigned" />
+          <ScalarProperty Name="Employeeid" ColumnName="Employeeid" />
+          <ScalarProperty Name="isCollected" ColumnName="isCollected" />
+          <ScalarProperty Name="isDelivered" ColumnName="isDelivered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="zero_hungerModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

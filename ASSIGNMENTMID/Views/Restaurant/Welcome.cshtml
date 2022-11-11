@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<h2>Request</h2>
+<form action="" method="post">
+    <table>
+        <tr>
+            <td>
+                <input type="number" name="Restaurantid" value="@Model.id" hidden/> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="Request1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="date" name="deadline" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="isAssigned" value="no" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" name="send">Send </button>
+            </td>
+        </tr>
+    </table>
+
+
+
+</form>

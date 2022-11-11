@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="" method="post">
+
+    <label for="employees">Employees: </label>
+
+    <select name="emId" id="employees">
+        <option value="">Please select your name</option>
+        @foreach (var items in Model)
+        {
+
+            <option value=@items.id>@items.name</option>
+
+        }
+
+    </select>
+    <br />
+    <input type="submit" value="Login" class="btn btn-primary" />
+</form>
+<br />
+<p>
+
+</p>

@@ -1,0 +1,79 @@
+﻿
+
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+
+    <table border="1">
+        <tr>
+            <td>
+                <b> ID NO. </b>
+            </td>
+
+            <td>
+                <b> Restaurantid </b>
+            </td>
+
+            <td>
+                <b> Request </b>
+            </td>
+
+            <td>
+                <b> deadline </b>
+            </td>
+
+            <td>
+                <b> Collected?  </b>
+            </td>
+
+            <td>
+                <b> Delivered?  </b>
+            </td>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.id
+                </td>
+                <td>
+                    @item.Restaurantid
+                </td>
+                <td>
+                    @item.Request1
+                </td>
+                <td>
+                    @item.deadline
+                </td>
+                <td>
+                    @if (@item.isCollected == null)
+                    {
+                        <a href="/Employee/Collected/@item.id">Collect</a>
+                    }
+                    else
+                    {
+                        @item.isCollected
+                    }
+                </td>
+                <td>
+                    @if (@item.isDelivered == null)
+                    {
+                        <a href="/Employee/Delivered/@item.id">Mark as delivered</a>
+                    }
+                    else
+                    {
+                        @item.isDelivered
+                    }
+                    
+                </td>
+
+            </tr>
+        }
+    </table>
+

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Seehistory";
+}
+
+<h2>Seehistory</h2>
+
+
+<table border="1">
+    <tr>
+        <td>
+            <b>Serial</b>
+        </td>
+        <td>
+            <b>Restaurant id</b>
+        </td>
+        <td>
+            <b>Request</b>
+        </td>
+
+        <td>
+            <b>Deadline</b>
+        </td>
+
+        <td>
+            <b>Assigned employee</b>
+        </td>
+
+        <td>
+            <b> Collected? </b>
+        </td>
+        <td>
+            <b> Delivered? </b>
+        </td>
+        <td>
+            <b> Action </b>
+        </td>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.Restaurantid</td>
+            <td>@item.Request1</td>
+            <td>@item.deadline</td>
+            @if (item.Employeeid != null)
+            {
+                <td>@item.Employeeid</td>
+            }
+            else
+            {
+                <td>Not Assigned</td>
+            }
+            @if (item.isCollected != null)
+            {
+                <td>@item.isCollected</td>
+            }
+else
+                {
+                <td>No</td>
+                }
+            @if (item.isDelivered != null)
+            {
+                <td>@item.isDelivered</td>
+            }
+else
+                {
+                    <td>No</td>
+                }
+            <td><a href="/Admin/Deletehistory/@item.id">Delete</a></td>
+
+
+
+        </tr>
+    }
+
+
+</table>
+
