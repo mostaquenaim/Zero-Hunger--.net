@@ -11,6 +11,7 @@ namespace ASSIGNMENTMID.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+        [HttpGet]
         public ActionResult Index()
         {
 
@@ -21,6 +22,19 @@ namespace ASSIGNMENTMID.Controllers
             else
             {
 
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Index(string uname,string pass)
+        {
+            if(uname=="Admin" && pass == "Admin")
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
                 return View();
             }
         }
@@ -98,6 +112,7 @@ namespace ASSIGNMENTMID.Controllers
         [HttpGet]
         public ActionResult Assignem(int id)
         {
+            
 
             if (Session["Login"] == null)
             {
@@ -168,5 +183,11 @@ namespace ASSIGNMENTMID.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Logout()
+        {
+            Session["Login"] = null;
+            return RedirectToAction("Index");
+        }
     }
+
 }

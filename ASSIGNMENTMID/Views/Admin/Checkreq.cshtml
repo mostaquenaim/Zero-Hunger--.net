@@ -41,10 +41,15 @@
             {
                 <td>@item.Employeeid</td>
             }
+            else
+            {
+                <td>Not assigned</td>
+                <td>
+                    <a href="/Admin/Assignem/@item.id">Assign Employee</a>
+                </td>
+            }
 
-            <td>
-                <a href="/Admin/Assignem/@item.id">Assign Employee</a>
-            </td>
+
         </tr>
     }
 
